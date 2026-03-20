@@ -18,6 +18,12 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 def generate_recipes(ingredients: list[str]) -> list[dict]:
     """
     Generate 3 beginner-friendly recipes from the given ingredients.
+
+    Returns:
+        List of recipe dicts with keys: name, ingredients, steps, time, difficulty
+
+    Raises:
+        RuntimeError: If the Gemini API call or JSON parsing fails.
     """
     ingredient_list = ", ".join(ingredients)
 
@@ -41,7 +47,19 @@ def generate_recipes(ingredients: list[str]) -> list[dict]:
     ]
     """
 
-    response = model.generate_content(prompt)
-    raw = response.text.strip()
-    recipes = json.loads(raw)
-    return recipes
+    try:
+        logger.info(f"Generating recipes for ingredients: {ingredients}")
+        response = model.generate_content(prompt)
+        raw = response.text.strip()
+        recipes = json.loads(raw)
+        logger.info(f"Successfully parsed {len(recipes)} recipes.")
+        return recipes
+
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON parse error: {e}")
+        raise RuntimeError("Failed to parse recipe response from AI.") from e
+
+    except Exception as e:
+        logger.error(f"Recipe generation failed: {e}")
+        raise RuntimeError(f"Recipe generation failed: {e}") from e
+
