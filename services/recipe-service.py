@@ -51,15 +51,24 @@ def generate_recipes(ingredients: list[str]) -> list[dict]:
         logger.info(f"Generating recipes for ingredients: {ingredients}")
         response = model.generate_content(prompt)
         raw = response.text.strip()
+
+        # Strip accidental markdown fences
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        raw = raw.strip()
+
         recipes = json.loads(raw)
         logger.info(f"Successfully parsed {len(recipes)} recipes.")
         return recipes
 
     except json.JSONDecodeError as e:
-        logger.error(f"JSON parse error: {e}")
+        logger.error(f"JSON parse error: {e} — raw response: {raw}")
         raise RuntimeError("Failed to parse recipe response from AI.") from e
 
     except Exception as e:
         logger.error(f"Recipe generation failed: {e}")
         raise RuntimeError(f"Recipe generation failed: {e}") from e
+
 
