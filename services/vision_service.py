@@ -1,8 +1,10 @@
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
 load_dotenv()
+logger = get_logger(__name__)
 
 _api_key = os.getenv("GEMINI_API_KEY")
 if not _api_key:
@@ -32,13 +34,21 @@ def detect_ingredients(image) -> list[str]:
     Example: apple, onion, olive oil, pasta
     """
 
-    response = model.generate_content([prompt, image])
-    raw_text = response.text.strip()
+    try:
+        logger.info("Calling Gemini vision model for ingredient detection.")
+        response = model.generate_content([prompt, image])
+        raw_text = response.text.strip()
+        logger.info(f"Raw Gemini response: {raw_text}")
 
-    ingredients = [
-        item.strip().lower()
-        for item in raw_text.split(",")
-        if item.strip()
-    ]
+        ingredients = [
+            item.strip().lower()
+            for item in raw_text.split(",")
+            if item.strip()
+        ]
 
-    return ingredients
+        logger.info(f"Detected {len(ingredients)} ingredients: {ingredients}")
+        return ingredients
+
+    except Exception as e:
+        logger.error(f"Gemini vision call failed: {e}")
+        raise RuntimeError(f"Ingredient detection failed: {e}") from e
