@@ -1,19 +1,16 @@
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from utils.logger import get_logger
 
-# Load environment variables
 load_dotenv()
+logger = get_logger(__name__)
 
-# Get API key from .env
 _api_key = os.getenv("GEMINI_API_KEY")
 if not _api_key:
     raise EnvironmentError("GEMINI_API_KEY is not set. Add it to your .env file.")
 
-# Configure Gemini API
 genai.configure(api_key=_api_key)
-
-# Initialize model
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 
@@ -30,9 +27,6 @@ def detect_ingredients(image) -> list[str]:
     Raises:
         RuntimeError: If the Gemini API call fails.
     """
-
-    # Clean return — no code after return statement
-
     prompt = """
     You are a kitchen assistant. Carefully examine this pantry/food image.
     Identify every visible food ingredient.
@@ -41,8 +35,10 @@ def detect_ingredients(image) -> list[str]:
     """
 
     try:
+        logger.info("Calling Gemini vision model for ingredient detection.")
         response = model.generate_content([prompt, image])
         raw_text = response.text.strip()
+        logger.info(f"Raw Gemini response: {raw_text}")
 
         ingredients = [
             item.strip().lower()
@@ -50,7 +46,9 @@ def detect_ingredients(image) -> list[str]:
             if item.strip()
         ]
 
+        logger.info(f"Detected {len(ingredients)} ingredients: {ingredients}")
         return ingredients
 
     except Exception as e:
-        raise RuntimeError(f"Gemini API call failed: {e}")
+        logger.error(f"Gemini vision call failed: {e}")
+        raise RuntimeError(f"Ingredient detection failed: {e}") from e
