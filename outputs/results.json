@@ -1,0 +1,24 @@
+{
+  "detected_items": [],
+  "categorized_items": {
+    "Fresh": [],
+    "Cold": [],
+    "Frozen": [],
+    "Dry": []
+  },
+  "recipes": [
+    {
+      "name": "",
+      "ingredients": [],
+      "steps": [],
+      "time": "",
+      "difficulty": "",
+      "missing_ingredients": []
+    }
+  ],
+  "substitutions": {},
+  "health_score": {
+    "score": 0,
+    "explanation": ""
+  }
+}
