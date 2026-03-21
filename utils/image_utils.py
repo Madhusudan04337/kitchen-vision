@@ -32,7 +32,10 @@ def preprocess_image(image: np.ndarray) -> np.ndarray:
                        [0, -1, 0]], dtype=np.float32)
     bgr = cv2.filter2D(bgr, -1, kernel)
 
-    # Clip to valid uint8 range — filter2D can push values out of [0,255]
+    # CRITICAL: Clip to [0, 255] and cast to uint8.
+    # filter2D may return float64 values outside valid image range.
+    # Streamlit st.image() requires uint8 or float in [0.0, 1.0].
+    # Values outside this range can render as a blank/black image.
     bgr = np.clip(bgr, 0, 255).astype(np.uint8)
 
     # Convert back to RGB for Streamlit
