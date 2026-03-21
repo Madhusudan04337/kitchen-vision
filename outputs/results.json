@@ -1,24 +1,109 @@
 {
-  "detected_items": [],
+  "detected_items": [
+    "green bell pepper",
+    "red bell pepper",
+    "garlic",
+    "avocado",
+    "red onion",
+    "cherry tomatoes",
+    "rosemary"
+  ],
   "categorized_items": {
-    "Fresh": [],
-    "Cold": [],
-    "Frozen": [],
-    "Dry": []
+    "\ud83e\udd6c Fresh Produce": [
+      "green bell pepper",
+      "red bell pepper",
+      "garlic",
+      "avocado",
+      "red onion",
+      "cherry tomatoes",
+      "rosemary"
+    ],
+    "\u2744\ufe0f Cold Storage": [],
+    "\ud83e\uddca Frozen": [],
+    "\ud83e\udd69 Proteins": [],
+    "\ud83c\udf3e Dry Storage": []
   },
   "recipes": [
     {
-      "name": "",
-      "ingredients": [],
-      "steps": [],
-      "time": "",
-      "difficulty": "",
-      "missing_ingredients": []
+      "name": "Mediterranean-Inspired Chopped Salad",
+      "ingredients": [
+        "1 green bell pepper, diced",
+        "1 red bell pepper, diced",
+        "1/2 red onion, finely diced",
+        "2 cloves garlic, minced",
+        "1 large avocado, diced",
+        "1 cup cherry tomatoes, halved",
+        "2 tbsp olive oil",
+        "Salt to taste",
+        "Black pepper to taste"
+      ],
+      "steps": [
+        "Wash and dice the green and red bell peppers, and finely dice the red onion.",
+        "Mince the garlic cloves.",
+        "Halve the cherry tomatoes.",
+        "Carefully dice the avocado.",
+        "In a large bowl, combine the diced bell peppers, red onion, minced garlic, halved cherry tomatoes, and diced avocado.",
+        "Drizzle with olive oil, then add salt and black pepper to taste.",
+        "Gently toss all ingredients together until well combined. Serve immediately."
+      ],
+      "time": "15 minutes",
+      "difficulty": "Easy"
+    },
+    {
+      "name": "Roasted Rosemary Bell Peppers & Tomatoes",
+      "ingredients": [
+        "1 green bell pepper, cut into strips",
+        "1 red bell pepper, cut into strips",
+        "1/2 red onion, cut into wedges",
+        "3 cloves garlic, thinly sliced",
+        "1.5 cups cherry tomatoes",
+        "2 sprigs fresh rosemary, leaves picked and roughly chopped",
+        "2 tbsp olive oil",
+        "Salt to taste",
+        "Black pepper to taste"
+      ],
+      "steps": [
+        "Preheat your oven to 400\u00b0F (200\u00b0C).",
+        "Wash and cut the green and red bell peppers into strips, and the red onion into wedges.",
+        "Thinly slice the garlic cloves and pick the leaves from the rosemary sprigs, then roughly chop them.",
+        "In a large baking dish or on a baking sheet, combine the bell pepper strips, red onion wedges, sliced garlic, and cherry tomatoes.",
+        "Drizzle with olive oil, then sprinkle with chopped rosemary, salt, and black pepper.",
+        "Toss everything together until the vegetables are evenly coated.",
+        "Roast in the preheated oven for 20-25 minutes, or until the vegetables are tender and slightly caramelized, stirring halfway through.",
+        "Serve warm as a side dish."
+      ],
+      "time": "35 minutes",
+      "difficulty": "Easy"
+    },
+    {
+      "name": "Creamy Avocado & Tomato Mash with Rosemary",
+      "ingredients": [
+        "2 ripe avocados",
+        "1 cup cherry tomatoes, quartered",
+        "1/4 red onion, very finely diced",
+        "1 clove garlic, minced",
+        "1 tbsp fresh rosemary, finely chopped",
+        "1 tbsp olive oil",
+        "Salt to taste",
+        "Black pepper to taste"
+      ],
+      "steps": [
+        "Halve the avocados, remove the pit, and scoop the flesh into a medium bowl.",
+        "Using a fork, mash the avocado roughly, leaving some chunks for texture.",
+        "Quarter the cherry tomatoes.",
+        "Very finely dice the red onion and mince the garlic clove.",
+        "Finely chop the fresh rosemary.",
+        "Add the quartered cherry tomatoes, diced red onion, minced garlic, and chopped rosemary to the mashed avocado.",
+        "Drizzle with olive oil, then add salt and black pepper to taste.",
+        "Gently fold all ingredients together until just combined. This mash is versatile and can be enjoyed as a side, dip, or topping."
+      ],
+      "time": "10 minutes",
+      "difficulty": "Easy"
     }
   ],
   "substitutions": {},
   "health_score": {
-    "score": 0,
-    "explanation": ""
+    "score": 10,
+    "explanation": "Superfoods detected: **avocado, garlic** \ud83c\udf1f\n\nFresh produce: **cherry tomatoes, green bell pepper, red bell pepper, red onion, rosemary** \ud83e\udd66"
   }
 }
