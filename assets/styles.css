@@ -104,3 +104,145 @@ h1, h2, h3 { font-family: 'Playfair Display', serif !important; color: #F5F0E8 !
 }
 
 p, li, label, .stMarkdown { color: rgba(245,240,232,0.80) !important; }
+
+/*  Generator page styles  */
+
+.cat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 14px;
+    padding: 16px;
+    min-height: 130px;
+    height: 100%;
+}
+.cat-title {
+    font-weight: 700;
+    font-size: .85rem;
+    color: #F5F0E8;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.cat-item {
+    font-size: .78rem;
+    color: rgba(245,240,232,.65);
+    padding: 3px 0;
+}
+.cat-empty {
+    font-size: .75rem;
+    color: rgba(245,240,232,.25);
+    font-style: italic;
+}
+
+.recipe-ing-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: .84rem;
+    color: rgba(245,240,232,.80);
+}
+.recipe-ing-row:last-child { border-bottom: none; }
+.recipe-ing-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #7C9A6E;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.recipe-step-row {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: .84rem;
+    color: rgba(245,240,232,.80);
+    line-height: 1.55;
+}
+.recipe-step-row:last-child { border-bottom: none; }
+.step-num {
+    min-width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(124,154,110,0.20);
+    border: 1px solid rgba(124,154,110,0.40);
+    color: #A8C09A;
+    font-size: .72rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+}
+
+.recipe-meta {
+    display: flex; gap: 10px;
+    margin-bottom: 16px; flex-wrap: wrap;
+}
+.meta-badge {
+    padding: 3px 10px; border-radius: 100px;
+    font-size: .72rem; font-weight: 600;
+    background: rgba(124,154,110,0.12);
+    border: 1px solid rgba(124,154,110,0.25);
+    color: #A8C09A;
+}
+
+.sub-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 18px 14px; text-align: center;
+    transition: border-color .3s;
+}
+.sub-card:hover { border-color: rgba(168,192,154,0.28); }
+.sub-icon  { font-size: 1.3rem; margin-bottom: 8px; }
+.sub-from  { font-weight: 700; font-size: .85rem; color: #F5F0E8; margin-bottom: 4px; }
+.sub-label { font-size: .70rem; color: rgba(245,240,232,.40); margin-bottom: 6px; }
+.sub-to    { font-size: .82rem; color: #A8C09A; font-weight: 600; line-height: 1.4; }
+
+.health-score-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 16px;
+    padding: 32px 20px; text-align: center;
+}
+.health-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem; font-weight: 900; line-height: 1;
+}
+.health-denom {
+    font-size: .70rem; color: rgba(245,240,232,.40);
+    letter-spacing: .12em; text-transform: uppercase; margin-top: 4px;
+}
+.health-label {
+    margin-top: 14px; font-size: .88rem; color: rgba(245,240,232,.65);
+}
+
+.health-exp-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 16px; padding: 24px; height: 100%;
+}
+.health-exp-title {
+    font-size: .78rem; font-weight: 700;
+    letter-spacing: .10em; text-transform: uppercase;
+    color: #A8C09A; margin-bottom: 14px;
+}
+.health-exp-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: .83rem; color: rgba(245,240,232,.75); line-height: 1.5;
+}
+.health-exp-row:last-child { border-bottom: none; }
+
+.upload-placeholder {
+    text-align: center; padding: 56px 0;
+    color: rgba(245,240,232,.30);
+}
+.upload-placeholder .up-icon { font-size: 3rem; margin-bottom: 12px; }
+.upload-placeholder .up-text { font-size: .88rem; }
+
+.img-label {
+    font-size: .80rem; font-weight: 600;
+    color: rgba(245,240,232,.60);
+    margin-bottom: 8px; letter-spacing: .04em;
+}
