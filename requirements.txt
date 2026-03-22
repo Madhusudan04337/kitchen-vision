@@ -2,5 +2,5 @@ streamlit>=1.35.0
 google-generativeai>=0.8.0
 Pillow>=10.0.0
 numpy>=1.26.0
-opencv-python>=4.8.0
+opencv-python-headless
 python-dotenv>=1.0.0
